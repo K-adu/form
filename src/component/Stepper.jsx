@@ -16,7 +16,7 @@ export default function MaterialSteeper() {
           <StepLabel>File Upload</StepLabel>
         </Step>
         <Step>
-          <StepLabel>Submit Form</StepLabel>
+          <StepLabel>link accounts</StepLabel>
         </Step>
       </Stepper>
     </div>
