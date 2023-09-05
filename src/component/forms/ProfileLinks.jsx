@@ -16,11 +16,15 @@ export default function ProfileLinks() {
         links: [linksGroup],
       }}
       onSubmit={async (values, actions) => {
-        alert(JSON.stringify(values, null, 2));
+        console.log('this is being triggered');
+        // const data = { ...formData, ...values };
+        // //alert(JSON.stringify(values, null, 2));
+        // setFormData(data);
+        setActiveStepIndex(activeStepIndex + 1);
       }}
     >
-      {({ values }) => (
-        <>
+      {({ values, handleSubmit }) => (
+        <Form onSubmit={handleSubmit}>
           <FieldArray name="links">
             {({ push, remove }) => (
               <Grid container spacing={2} sx={{ marginTop: 2, paddingX: 2 }}>
@@ -64,14 +68,14 @@ export default function ProfileLinks() {
                   <Button variant="outlined" onClick={() => push(linksGroup)}>
                     Add Link
                   </Button>
-                  {/* <Button variant="outlined" onClick={''}>
-                      Next
-                    </Button> */}
+                  <Button variant="outlined" type="submit">
+                    Next
+                  </Button>
                 </Grid>
               </Grid>
             )}
           </FieldArray>
-        </>
+        </Form>
       )}
     </Formik>
     // </form>
